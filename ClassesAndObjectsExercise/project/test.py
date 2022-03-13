@@ -1,46 +1,75 @@
-from ClassesAndObjectsExercise.project.library import Library
-from ClassesAndObjectsExercise.project.user import User
-from ClassesAndObjectsExercise.project.registration import Registration
-import unittest
 
 
-class TestsUser(unittest.TestCase):
-    def setUp(self):
-        self.user = User(12, 'Valentina')
-        self.library = Library()
-        self.register = Registration()
-
-    # LIBRARY CLASS TESTS
-    def test_get_book_method_with_book_available_in_the_library_should_add_it_in_the_books_list(self):
-        self.library.books_available.update({'J.K.Rowling': ['Harry Potter and the Philosopher\'s Stone',
-                                                             'Harry Potter and the Philosopher\'s Stone',
-                                                             'Harry Potter and the Deathly Hallows',
-                                                             'Harry Potter and the Order of the Phoenix']})
-        result = self.library.get_book('J.K.Rowling', 'Harry Potter and the Deathly Hallows', 17, self.user)
-        self.assertEqual(result, 'Harry Potter and the Deathly Hallows successfully rented for the next 17 days!')
-        self.assertEqual(self.user.books, ["Harry Potter and the Deathly Hallows"])
-        self.assertEqual(self.library.rented_books, {'Valentina': {'Harry Potter and the Deathly Hallows': 17}})
-        self.assertEqual(self.library.books_available, {'J.K.Rowling': ['Harry Potter and the Philosopher\'s Stone',
-                                                                        'Harry Potter and the Philosopher\'s Stone',
-                                                                        'Harry Potter and the Order of the Phoenix']})
-
-    def test_get_book_method_with_book_already_rented_should_return_a_message(self):
-        self.library.books_available.update({'J.K.Rowling': ['Harry Potter and the Philosopher\'s Stone',
-                                                             'Harry Potter and the Philosopher\'s Stone',
-                                                             'Harry Potter and the Deathly Hallows',
-                                                             'Harry Potter and the Order of the Phoenix']})
-        self.library.get_book('J.K.Rowling', 'Harry Potter and the Deathly Hallows', 17, self.user)
-        second_user = User(13, 'Peter')
-        result = self.library.get_book('J.K.Rowling', 'Harry Potter and the Deathly Hallows', 17, self.user)
-        self.assertEqual(result,
-                         'The book "Harry Potter and the Deathly Hallows" is already rented and will be available in 17 days!')
-        self.assertEqual(self.user.books, ["Harry Potter and the Deathly Hallows"])
-        self.assertEqual(second_user.books, [])
-        self.assertEqual(self.library.rented_books, {'Valentina': {'Harry Potter and the Deathly Hallows': 17}})
-        self.assertEqual(self.library.books_available, {'J.K.Rowling': ['Harry Potter and the Philosopher\'s Stone',
-                                                                        'Harry Potter and the Philosopher\'s Stone',
-                                                                        'Harry Potter and the Order of the Phoenix']})
+from project.drink import Drink
+from project.food import Food
+from project.product import Product
+from project.product_repository import ProductRepository
 
 
-if __name__ == "__main__":
-    unittest.main()
+
+product = Product('product', 150)
+drink = Drink('drink')
+food = Food('food')
+repo = ProductRepository()
+
+print(product.name) #self.assertEqual(self.product.name, 'product')
+print(product.quantity) #self.assertEqual(self.product.quantity, 150)
+
+product.decrease(10)
+print(product.quantity) #self.assertEqual(self.product.quantity, 140)
+
+product.increase(10)
+print(product.quantity) #self.assertEqual(self.product.quantity, 160)
+
+print(drink.name) #self.assertEqual(self.drink.name, 'drink')
+print(drink.quantity) #self.assertEqual(self.drink.quantity, 10)
+print(drink.__class__.__base__.__name__) #self.assertEqual(self.drink.__class__.__base__.__name__, 'Product')
+
+    # def test_decrease_drink(self):
+    #     self.drink.decrease(10)
+    #     self.assertEqual(self.drink.quantity, 0)
+    #
+    # def test_increase_drink(self):
+    #     self.drink.increase(10)
+    #     self.assertEqual(self.drink.quantity, 20)
+    #
+    # def test_food_init(self):
+    #     self.assertEqual(self.food.name, 'food')
+    #     self.assertEqual(self.food.quantity, 15)
+    #     self.assertEqual(self.food.__class__.__base__.__name__, 'Product')
+    #
+    # def test_decrease_food(self):
+    #     self.food.decrease(10)
+    #     self.assertEqual(self.food.quantity, 5)
+    #
+    # def test_increase_food(self):
+    #     self.food.increase(10)
+    #     self.assertEqual(self.food.quantity, 25)
+    #
+    # def test_init_repo(self):
+    #     self.assertEqual(self.repo.products, [])
+    #
+    # def test_repo_add(self):
+    #     self.repo.add(self.food)
+    #     self.repo.add(self.drink)
+    #     self.assertEqual(len(self.repo.products), 2)
+    #     self.assertEqual(self.repo.products[0], self.food)
+    #     self.assertEqual(self.repo.products[1], self.drink)
+    #
+    # def test_repo_remove(self):
+    #     self.repo.products = [self.drink, self.food]
+    #     self.repo.remove('drink')
+    #     self.assertEqual(self.repo.products[0], self.food)
+    #     self.repo.remove('drink')
+    #     self.assertEqual(self.repo.products[0], self.food)
+
+
+repo.add(food)
+repo.add(drink)
+actual = str(repo)
+print(actual)
+        # expected = 'food: 15\ndrink: 10'
+        # self.assertEqual(expected, actual)
+
+
+
