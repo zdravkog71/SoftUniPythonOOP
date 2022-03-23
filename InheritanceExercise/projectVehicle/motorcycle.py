@@ -1,4 +1,4 @@
-from project.vehicle import Vehicle
+from InheritanceExercise.projectVehicle.vehicle import Vehicle
 
 
 class Motorcycle(Vehicle):

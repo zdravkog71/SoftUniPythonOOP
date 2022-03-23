@@ -1,5 +1,5 @@
-from project.product import Product
-from project.constants import FOOD_QUANTITY
+from ClassesAndObjectsExercise.project.product import Product
+from ClassesAndObjectsExercise.project.constants import FOOD_QUANTITY
 
 
 class Food(Product):

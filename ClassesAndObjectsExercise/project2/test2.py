@@ -1,5 +1,5 @@
-from ClassesAndObjectsExercise.project.library import Library
-from ClassesAndObjectsExercise.project.user import User
+from ClassesAndObjectsExercise.project2.library import Library
+from ClassesAndObjectsExercise.project2.user import User
 
 user = User(12, 'Valentina')
 library = Library()

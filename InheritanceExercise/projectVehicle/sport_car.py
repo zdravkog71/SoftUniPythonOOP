@@ -1,4 +1,4 @@
-from project.car import Car
+from InheritanceExercise.projectVehicle.car import Car
 
 
 

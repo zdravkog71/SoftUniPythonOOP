@@ -1,6 +1,6 @@
-from ClassesAndObjectsExercise.project.library import Library
-from ClassesAndObjectsExercise.project.user import User
-from ClassesAndObjectsExercise.project.registration import Registration
+from ClassesAndObjectsExercise.project2.library import Library
+from ClassesAndObjectsExercise.project2.user import User
+from ClassesAndObjectsExercise.project2.registration import Registration
 import unittest
 
 

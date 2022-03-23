@@ -1,9 +1,9 @@
 
 
-from project.drink import Drink
-from project.food import Food
-from project.product import Product
-from project.product_repository import ProductRepository
+from ClassesAndObjectsExercise.project.drink import Drink
+from ClassesAndObjectsExercise.project.food import Food
+from ClassesAndObjectsExercise.project.product import Product
+from ClassesAndObjectsExercise.project.product_repository import ProductRepository
 
 
 
