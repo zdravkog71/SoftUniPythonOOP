@@ -1,4 +1,4 @@
-from project.animal import Animal
+from TestingExercise.vehicle.project import Animal
 
 
 class Dog(Animal):

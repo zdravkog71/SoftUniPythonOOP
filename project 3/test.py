@@ -1,10 +1,10 @@
 import unittest
 
-from project.animal import Animal
-from project.cat import Cat
-from project.dog import Dog
-from project.kitten import Kitten
-from project.tomcat import Tomcat
+from TestingExercise.vehicle.project import Animal
+from TestingExercise.vehicle.project import Cat
+from TestingExercise.vehicle.project import Dog
+from TestingExercise.vehicle.project import Kitten
+from TestingExercise.vehicle.project import Tomcat
 
 
 class Tests(unittest.TestCase):

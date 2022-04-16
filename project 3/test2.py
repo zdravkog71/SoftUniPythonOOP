@@ -1,4 +1,4 @@
-from project.tomcat import Tomcat
+from TestingExercise.vehicle.project import Tomcat
 
 t = Tomcat("Meowy", 20)
 exp = "This is Meowy. Meowy is a 20 year old Male Tomcat"

@@ -1,4 +1,4 @@
-from project.cat import Cat
+from TestingExercise.vehicle.project import Cat
 
 class Kitten(Cat):
     GENDER = "Female"
