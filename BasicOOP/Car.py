@@ -10,3 +10,5 @@ class Car:
 
 car = Car("Kia", "Rio", "1.3L B3 I4")
 print(car.get_info())
+print(name.model)
+
